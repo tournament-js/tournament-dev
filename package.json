@@ -1,0 +1,18 @@
+{
+  "name": "tournament-dev",
+  "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
+  "private": true,
+  "description": "Master repo for tournament module",
+  "dependencies": {
+    "async": "^1.5.0",
+    "bandage": "^0.3.2",
+    "semver": "^5.1.0"
+  },
+  "scripts": {
+    "test": "bndg verify_versions.js"
+  },
+  "bugs": {
+    "url": "http://github.com/clux/tournament-dev/issues"
+  },
+  "license": "MIT"
+}
