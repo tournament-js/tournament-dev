@@ -3,6 +3,9 @@
 
 A master development repo to keep track of, and synchronize all tournament dependencies.
 
+## Usage
+Checkout, clone recursive, and [symlink](https://npmjs.org/package/symlink) together.
+
 ## Why
 Monorepos have their benefits, but you do actually want modular components released on npm. This contains helper scripts to get things set up and speed up the duplication needed to maintain multiple smaller repos.
 
