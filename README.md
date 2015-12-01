@@ -1,5 +1,6 @@
 # tournament-dev
 [![build status](https://secure.travis-ci.org/clux/tournament-dev.svg)](http://travis-ci.org/clux/tournament-dev)
+
 A master development repo to keep track of, and synchronize all tournament dependencies.
 
 ## Why
