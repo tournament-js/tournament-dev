@@ -67,14 +67,16 @@ test('latest published', function *(t) {
   }, {});
 
   deps.forEach((dep) => {
-    t.ok(canonicals[dep], 'canonical version of ' + dep);
+    t.ok(canonicals[dep], 'canonical version of ' + dep + ' is ' + canonicals[dep]);
   });
 
   jsons.forEach((json) => {
     Object.keys(json.data.dependencies).forEach((key) => {
       var qualifier = json.data.dependencies[key];
       if (deps.indexOf(key) >= 0) {
-        t.ok(semver.satisfies(canonicals[key], qualifier), key + ' ' + qualifier);
+        var requirement = json.data.name + ' requires ' + key + ' ' + qualifier
+        requirement += ' (currently at ' + canonicals[key] + ')'
+        t.ok(semver.satisfies(canonicals[key], qualifier), requirement);
       }
     });
   });
