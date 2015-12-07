@@ -53,7 +53,7 @@ var getJsons = function (dir) {
                       .map(str => join(dir, str));
 
       async.map(paths, getJson, function (err2, res) {
-        return err ? reject(err2) : resolve(res);
+        return err2 ? reject(err2) : resolve(res);
       });
     });
   });
