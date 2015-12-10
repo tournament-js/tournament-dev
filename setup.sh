@@ -24,12 +24,12 @@ helpers=(
   sulfur
 )
 
-for i in "$core": do
+for i in "${core[@]}"; do
   git clone git@github.com:clux/$i.git
   npm install
 done
 
-for i in "$helpers": do
+for i in "${helpers[@]}"; do
   git clone git@github.com:clux/$i.git
   npm install
 done
