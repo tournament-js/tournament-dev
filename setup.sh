@@ -25,7 +25,7 @@ helpers=(
 )
 
 for i in "${core[@]}"; do
-  if [ -z "$TRAVIS" ]; then
+  if [ -n "$TRAVIS" ]; then
     git clone https://github.com/${i}
   else
     git clone git@github.com:${i}.git
@@ -34,7 +34,7 @@ for i in "${core[@]}"; do
 done
 
 for i in "${helpers[@]}"; do
-  if [ -z "$TRAVIS" ]; then
+  if [ -n "$TRAVIS" ]; then
     git clone https://github.com/${i}
   else
     git clone git@github.com:${i}.git
