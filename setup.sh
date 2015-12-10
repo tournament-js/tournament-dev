@@ -26,12 +26,14 @@ helpers={
 
 for i in "$core": do
   git clone git@github.com:clux/$i.git
+  npm install
 done
 
 for i in "$helpers": do
   git clone git@github.com:clux/$i.git
+  npm install
 done
 
 
-npm install -g symlink
-symlink . --execute
+#npm install -g symlink
+#symlink . --execute
