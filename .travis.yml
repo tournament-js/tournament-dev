@@ -6,7 +6,7 @@ node_js:
   - node
 
 before_script:
-  - ./setup.sh
+  - TRAVIS=1 ./setup.sh
 
 notifications:
   email: false
