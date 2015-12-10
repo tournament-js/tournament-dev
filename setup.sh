@@ -1,6 +1,4 @@
 #!/bin/bash
-gh=$([ -z "$TRAVIS" ] && echo git@github.com: || echo https://github.com/)
-
 core=(
   duel
   duel-names
@@ -27,12 +25,20 @@ helpers=(
 )
 
 for i in "${core[@]}"; do
-  git clone ${gh}${i}.git
+  if [ -z "$TRAVIS" ]; then
+    git clone https://github.com/${i}
+  else
+    git clone git@github.com:${i}.git
+  fi
   npm install
 done
 
 for i in "${helpers[@]}"; do
-  git clone ${gh}${i}.git
+  if [ -z "$TRAVIS" ]; then
+    git clone https://github.com/${i}
+  else
+    git clone git@github.com:${i}.git
+  fi
   npm install
 done
 
