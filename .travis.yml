@@ -5,5 +5,8 @@ node_js:
   - 4
   - node
 
+before_script:
+  - ./setup.sh
+
 notifications:
   email: false
