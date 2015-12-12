@@ -34,9 +34,9 @@ done
 
 for i in "${helpers[@]}"; do
   if [ -n "$TRAVIS" ]; then
-    git clone https://github.com/${i}
+    git clone https://github.com/clux/${i}
   else
-    git clone git@github.com:${i}.git
+    git clone git@github.com:clux/${i}.git
   fi
 done
 
