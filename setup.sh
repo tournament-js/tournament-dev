@@ -1,4 +1,7 @@
 #!/bin/bash
+set -e
+GH=$([ -z "$TRAVIS" ] && echo "git@github.com:" || echo "https://github.com/")
+
 core=(
   duel
   duel-names
@@ -13,9 +16,7 @@ core=(
   tiebreaker
   tournament
   tourney
-)
-
-helpers=(
+  # helpers
   autonomy
   interlude
   operators
@@ -25,21 +26,8 @@ helpers=(
 )
 
 for i in "${core[@]}"; do
-  if [ -n "$TRAVIS" ]; then
-    git clone https://github.com/clux/${i}
-  else
-    git clone git@github.com:clux/${i}.git
-  fi
+  git clone git@github.com:clux/${i}.git
 done
-
-for i in "${helpers[@]}"; do
-  if [ -n "$TRAVIS" ]; then
-    git clone https://github.com/clux/${i}
-  else
-    git clone git@github.com:clux/${i}.git
-  fi
-done
-
 
 npm install -g symlink
 symlink . --execute
