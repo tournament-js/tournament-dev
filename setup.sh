@@ -2,7 +2,7 @@
 set -e
 GH=$([ -z "$TRAVIS" ] && echo "git@github.com:" || echo "https://github.com/")
 
-core=(
+modules=(
   duel
   duel-names
   ffa
@@ -25,8 +25,8 @@ core=(
   sulfur
 )
 
-for i in "${core[@]}"; do
-  git clone git@github.com:clux/${i}.git
+for i in "${modules[@]}"; do
+  git clone ${GH}clux/${i}.git
 done
 
 npm install -g symlink
