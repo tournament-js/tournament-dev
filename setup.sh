@@ -30,7 +30,6 @@ for i in "${core[@]}"; do
   else
     git clone git@github.com:clux/${i}.git
   fi
-  npm install
 done
 
 for i in "${helpers[@]}"; do
@@ -39,9 +38,8 @@ for i in "${helpers[@]}"; do
   else
     git clone git@github.com:${i}.git
   fi
-  npm install
 done
 
 
-#npm install -g symlink
-#symlink . --execute
+npm install -g symlink
+symlink . --execute

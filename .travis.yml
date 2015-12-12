@@ -3,7 +3,6 @@ sudo: false
 
 node_js:
   - 4
-  - node
 
 before_script:
   - TRAVIS=1 ./setup.sh
