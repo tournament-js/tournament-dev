@@ -77,6 +77,10 @@ test('latest published', function *(t) {
         var requirement = json.data.name + ' requires ' + key + ' ' + qualifier
         requirement += ' (currently at ' + canonicals[key] + ')'
         t.ok(semver.satisfies(canonicals[key], qualifier), requirement);
+        // verify same minor
+        var reqminor = semver.Range(qualifier).set[0][0].semver.minor;
+        var actualminor = semver.minor(canonicals[key]);
+        t.equal(reqminor, actualminor, json.data.name + ' requires ' + key + ' at right minor');
       }
     });
   });
