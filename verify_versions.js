@@ -74,16 +74,18 @@ test('latest published', function *(t) {
     Object.keys(json.data.dependencies).forEach((key) => {
       var qualifier = json.data.dependencies[key];
       if (deps.indexOf(key) >= 0) {
-        var requirement = json.data.name + ' requires ' + key + ' ' + qualifier
-        requirement += ' (currently at ' + canonicals[key] + ')'
+        var requirement = json.data.name + ' requires ' + key + ' ' + qualifier;
+        requirement += ' (currently at ' + canonicals[key] + ')';
         t.ok(semver.satisfies(canonicals[key], qualifier), requirement);
         // verify same minor
-        var reqminor = semver.Range(qualifier).set[0][0].semver.minor;
+        var reqminor = new semver.Range(qualifier).set[0][0].semver.minor;
         var actualminor = semver.minor(canonicals[key]);
         t.equal(reqminor, actualminor, json.data.name + ' requires ' + key + ' at right minor');
       }
     });
   });
-
 });
+
+// TODO: verify each class outputs an `Id` class
+// TODO: verify each class has a tag equal to the version the package.json is at
 
