@@ -5,11 +5,11 @@
   "description": "Master repo for tournament module",
   "dependencies": {
     "async": "^1.5.0",
-    "bandage": "^0.3.2",
+    "bandage": "^0.4.0",
     "semver": "^5.1.0"
   },
   "scripts": {
-    "test": "bndg verify_versions.js"
+    "test": "bndg test.js"
   },
   "bugs": {
     "url": "http://github.com/clux/tournament-dev/issues"
