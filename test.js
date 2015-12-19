@@ -13,15 +13,15 @@ const tourneys = [
   'groupstage-tb',
   'groupstage-tb-duel',
 ];
-const impls = tournaments.concat(tourneys)
+const impls = tournaments.concat(tourneys);
 
 const helpers = [
   'duel-names',
   'group',
   'roundrobin'
-]
+];
 
-const deps = base.concat(impls).concat(helpers)
+const deps = base.concat(impls).concat(helpers);
 const extras = [
   'autonomy',
   'interlude',
@@ -62,7 +62,7 @@ var getJsons = function (dir) {
 };
 
 
-var latestTag = function (name, cb) {
+var latestTag = function (name) {
   return new Promise((res) => {
     var cmd = 'cd ' + __dirname + '/' + name + ' && git tag -l | tail -n 1';
     cp.exec(cmd, (err, out) => {
@@ -118,7 +118,8 @@ test('Common interface', function *(t) {
   tournaments.forEach(m => {
     var Klass = require('./' + m + '/');
     // Each tournament class should export an `Id` class
-    // TODO: need this be uniformly true for tourneys? - should we export it for bases?
+    // NB: tourney's will typically reuse Ids from tournaments
     t.type(Klass.Id, 'function', m + ' has Id class exposed');
+    t.type(Klass, 'function', m + ' is a class');
   });
 });
