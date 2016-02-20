@@ -17,11 +17,11 @@ modules=(
   tournament
   tourney
   # helpers
-  #autonomy
-  #interlude
-  #operators
+  autonomy
+  interlude
+  operators
   smell
-  #subset
+  subset
   sulfur
 )
 
