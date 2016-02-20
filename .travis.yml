@@ -8,4 +8,5 @@ notifications:
     on_success: change
     on_failure: always
 before_script:
+  - node --version | grep -q "v4." || npm install -g npm
   - TRAVIS=1 ./setup.sh
