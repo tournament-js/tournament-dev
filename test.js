@@ -23,11 +23,11 @@ const helpers = [
 
 const deps = base.concat(impls).concat(helpers);
 const extras = [
-  'autonomy',
-  'interlude',
-  'operators',
+  //'autonomy',
+  //'interlude',
+  //'operators',
   'smell',
-  'subset',
+  //'subset',
   'sulfur'
 ];
 
