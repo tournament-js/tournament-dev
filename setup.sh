@@ -20,7 +20,7 @@ modules=(
   #autonomy
   #interlude
   #subset
-  operators
+  #operators
   smell
   sulfur
 )
