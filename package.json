@@ -1,6 +1,6 @@
 {
   "name": "tournament-dev",
-  "author": "Eirik Albrigtsen <analsandblaster@gmail.com>",
+  "author": "Eirik Albrigtsen <sszynrae@gmail.com>",
   "private": true,
   "description": "Master repo for tournament module",
   "dependencies": {
